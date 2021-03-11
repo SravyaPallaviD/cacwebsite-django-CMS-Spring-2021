@@ -17,11 +17,23 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
-from pages import views
+from pages.views import home_view
+from pages.views import header_footer_view
+from pages.views import cannon_services_view, rutherford_services_view,d2l_view
+from pages.views import d2l_schedule_training_view, d2l_attend_training_view, rutherford_cpit_view, cannon_d2l_view, cannon_cpit_view
 
 urlpatterns = [
-	path('', views.home_view),
+	path('', home_view),
+	path('cannon_services/',cannon_services_view),
+	path('rutherford_services/',rutherford_services_view),
+	path('rutherford_services/d2l/',d2l_view),
+	path('rutherford_services/d2l/d2l_schedule_training/', d2l_schedule_training_view),
+	path('rutherford_services/d2l/d2l_attend_training/', d2l_schedule_training_view),
+	path('rutherford_services/cpit',rutherford_cpit_view),
+	path('cannon_services/d2l/',cannon_d2l_view),
+	path('cannon_services/cpit',cannon_cpit_view),
     path('admin/', admin.site.urls),
+
 ]
 
-urlpatterns = urlpatterns + static (settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
+urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

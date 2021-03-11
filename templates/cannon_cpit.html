@@ -1,0 +1,147 @@
+<html>
+{% extends 'header_and_footer.html' %}
+
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+  {% block content %}
+<div id="header"></div>
+
+<h1 class="cpit-header">Cannon County Child Protective Investigative Team</h1>
+
+<!-- Each column contains a card and within that card is the name, picture, address, number, logo and a contact button for every CPIT team member -->
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/cannon_cpit/cannon CAC.PNG' %}" style="width:100%">
+      <div class="container">
+        <h3>Cannon County Child Advocacy Center</h3>
+        <p>214 West Water Street <br>
+          Woodbury, TN 37190</p>
+          <br>
+        <p>(615) 563-9915</p>
+        <!-- some logos have special stylization to accomodate for shape. 
+          i.e. this logo needs to be longer than the police department/sherrif's office logos -->
+        <img src="{% static 'images/cannon_cpit/CAC Logo.jpg' %}" style="height:100px;display:block;margin:auto;margin-bottom: 20px">
+        <p><button class="cpit-button" onclick="window.location.href='https://www.cannoncac.org';">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/cannon_cpit/Cannon Sherrif Building.jpg' %}" style="width:100%">
+      <div class="container">
+        <h3>Cannon County Sheriff’s Department</h3>
+        <div class="cpit-flex">
+          <div class="cpit-flex-item">
+            <p>110 Alexander Drive <br>
+              Woodbury, TN 37190</p>
+            <p>(615) 563-5934</p>
+          </div>
+          <div class="cpit-flex-item">
+            <img src="{% static 'images/cannon_cpit/Cannon Sherrif Logo.png' %}" style="height:110px;display:block;margin:auto;margin-bottom: 20px">
+          </div>
+        </div>
+        <p><button class="cpit-button" onclick="window.location.href='https://cannoncountytn.net/sheriff';">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/cannon_cpit/DA Building.PNG' %}" style="width:100%">
+      <div class="container">
+        <h3>District Attorney’s Office for the 16th Judicial District</h3>
+        <p>320 West Main Street, Suite 100 <br>
+          Murfreesboro, TN 37130</p>
+        <p>(615) 898-8008</p>
+        <img src="{% static 'images/cannon_cpit/DA Logo.png' %}" style="height:90px;display:block;margin:auto;background-color:black;padding:10px;margin-bottom: 20px">
+        <p><button class="cpit-button" onclick="window.location.href='https://www.tndagc.org/district/16';">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/cannon_cpit/Cannon YOuth Services Building.jpg' %}" style="width:100%">
+      <div class="container">
+        <h3>Juvenile Court Youth Services</h3>
+        <br>
+        <div class="cpit-flex">
+          <div class="cpit-flex-item">
+            <p>200 West Main Street <br>
+              Woodbury, TN 37190</p>
+              <br>
+            <p>(615) 898-0771</p>
+          </div>
+          <div class="cpit-flex-item">
+            <img src="{% static 'images/cannon_cpit/Cannon YOuth Services Logo.jpg' %}" style="height:110px;display:block;margin:auto;margin-bottom: 20px">
+          </div>
+        </div>
+        <p><button class="cpit-button" onclick="window.location.href='https://cannoncountytn.net/juvenile-court';">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/cannon_cpit/Our Kids Building.jpg' %}" style="width:100%">
+      <div class="container">
+        <h3>Our Kids Center</h3>
+        <p>804 Hayes Street <br>
+          Nashville, TN 37203</p>
+        <p>(615) 341-4911</p>
+        <img src="{% static 'images/cannon_cpit/Our Kids Logo.jpg' %}" style="height:60px;display:block;margin:auto;margin-bottom: 20px">
+        <p><button class="cpit-button" onclick="window.location.href='https://ourkidscenter.com/';">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/cannon_cpit/Warren County DCS Building.jpg'%} " style="width:100%">
+      <div class="container">
+        <h3>Warren County Department of Children Services</h3>
+        <p>1200 Belmont Drive <br>
+          McMinnville, TN 37110</p>
+        <p>(931) 473-1524</p>
+
+        <img src="{% static 'images/cannon_cpit/Warren County DCS Logo.jpg' %}" style="height:100px;display:block;margin:auto;margin-bottom: 20px">
+
+        <p><button class="cpit-button" onclick="window.location.href='https://www.tn.gov/content/tn/dcs/contact-us/regional-offices/upper-cumberland-region.html';">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="column">
+    <div class="card">
+      <img src="{% static 'images/cannon_cpit/Woodbury PD Building.jpg' %}" style="width:100%">
+      <div class="container">
+        <h3>Woodbury Police Department</h3>
+        <div class="cpit-flex">
+          <div class="cpit-flex-item">
+            <p>965 West Main Street <br>
+              Woodbury, TN 37190</p>
+            <p>(615) 563-5940</p>
+          </div>
+          <div class="cpit-flex-item">
+            <img src="{% static 'images/cannon_cpit/Woodbury PD Logo.png' %}" style="height:110px;display:block;margin:auto;margin-bottom: 20px">
+          </div>
+        </div>
+        <p><button class="cpit-button" onclick="window.location.href='https://cannoncountytn.net/woodbury-city-of/';">Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+{% endblock %}
+</body>
+</html>

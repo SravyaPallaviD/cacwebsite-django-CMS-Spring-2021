@@ -26,14 +26,14 @@ counters.forEach(counter => {
 });
 
 //include header and footer to every page
-var fileinclude = require('gulp-file-include'),
-  gulp = require('gulp');
+//var fileinclude = require('gulp-file-include'),
+  //gulp = require('gulp');
 
-gulp.task('fileinclude', function() {
-  gulp.src(['home.html'])
-    .pipe(fileinclude({
-      prefix: '@@',
-      basepath: '@file'
-    }))
-    .pipe(gulp.dest('./'));
-});
+//gulp.task('fileinclude', function() {
+  //gulp.src(['home.html'])
+    //.pipe(fileinclude({
+      //prefix: '@@',
+     // basepath: '@file'
+   // }))
+   // .pipe(gulp.dest('./'));
+//});
