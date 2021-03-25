@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/6850507bfa.js" crossorigin="anonymous"></script>
+    
+    <!-- scripts for google translate -->
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript"> 
+        function googleTranslateElementInit() {
+        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+    }
+    </script>
   </head>
 
   <body>
@@ -27,7 +35,6 @@
         /* ============ desktop view .end// ============ */
     </style> 
 
-    <!-- google translate somewhere here -->
 
     <!-- logo at the top of home page -->
     <a href="/home" data-link><img class="logo" src="{% static 'images/Logo.png' %}" width="500px"></a>
@@ -104,6 +111,9 @@
             <li class="nav-item"><a class="nav-link" href="https://cacrutherford.networkforgood.com/projects/103408-donations-to-help-child-abuse-victims"> DONATE </a></li>
         </ul>
 
+        <!-- google translate -->
+        <div id="google_translate_element"></div>
+            
         </div> <!-- navbar-collapse.// -->
     </nav>
     </div>
