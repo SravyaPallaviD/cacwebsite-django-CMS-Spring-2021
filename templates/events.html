@@ -19,7 +19,7 @@
         {% if forloop.counter|divisibleby:"2" %}
         <div class="row content-row">
             <div class="col-6 img-col">
-                <img src="{{eve.event_image.url}}">
+                <img class="img-fluid" src="{{eve.event_image.url}}">
             </div>
             <div class="col-6 right-content">
                 <h1>{{eve.date}}</h1>
@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="col-6 img-col">
-            <img src="{{eve.event_image.url}}">
+            <img class="img-fluid" src="{{eve.event_image.url}}">
         </div>
         
         </div>
