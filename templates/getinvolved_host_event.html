@@ -12,27 +12,28 @@
       Send us the information!</p>
         <!-- bootstrap form design, ids and aria-describeby attributes not hooked up -->
           <div class="event-form-body">
-              <form class="event-form">
+              <form class="event-form" action = "" method="POST">
+                {% csrf_token %}
                   <div class="form-group">
-                      <input type="text" class="form-control form-control-hover " id="userName" aria-describedby="userName" placeholder="Contact Name" />
+                      <input type="text" class="form-control form-control-hover " id="name" name="name" placeholder="Contact Name" />
                   </div>
                   <div class="form-group">
-                      <input type="email" class="form-control form-control-hover" id="userEmail" aria-describedby="emailHelp" placeholder="Organization Name" />
+                      <input type="text" class="form-control form-control-hover" id="organizationName" name="organizationName" placeholder="Organization Name" />
                   </div>
                   <div class="form-group">
-                      <input type="text" class="form-control form-control-hover" id="eventName" aria-describedby="eventName" placeholder="Mailing Address" />
+                      <input type="text" class="form-control form-control-hover" id="address" name="address" placeholder="Mailing Address" />
                   </div>
                   <div class="form-group">
-                    <input type="text" class="form-control form-control-hover" id="eventName" aria-describedby="eventName" placeholder="City, State, Zip" />
+                    <input type="text" class="form-control form-control-hover" id="citySTATEzip" name="citySTATEzip" placeholder="City, State, Zip" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-hover" id="eventName" aria-describedby="eventName" placeholder="Email" />
+                    <input type="emai;" class="form-control form-control-hover" id="email" name="email" placeholder="Email" />
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control form-control-hover" id="eventName" aria-describedby="eventName" placeholder="Telephone Number" />
+                    <input type="tel" class="form-control form-control-hover" id="number" name="number" placeholder="Telephone Number" />
                 </div>
                   <div class="form-group">
-                      <textarea class="form-control form-control-hover event-textarea" id="aboutEvent" rows="3" placeholder="What kind of event would you like to host?"></textarea>
+                      <textarea class="form-control form-control-hover event-textarea" name = "aboutEvent" id="aboutEvent" rows="3" placeholder="What kind of event would you like to host?"></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary submit-btn">Submit Request</button>
               </form>
