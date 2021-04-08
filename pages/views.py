@@ -1,5 +1,7 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
+from django.core.mail import BadHeaderError, send_mail
+from django.core import mail
 from .models import Statistics
 from .models import Image1
 from .models import Image2
@@ -159,3 +161,92 @@ def home_view(request, *args, **kwargs):
 
 	}
 	return render(request, 'home.html', context)
+
+
+#views for D2L attendTraining form that is functioning to send to client
+def attendTraining(request):
+	if request.method == 'POST':
+		subject = "Darkness to Light : Attend Training"
+		body = {
+			'name':request.POST.get('name', ''),
+			'address' : request.POST.get('address', ''),
+			'city' : request.POST.get('city', ''),
+			'state': request.POST.get('state', ''),
+			'zipcode' : request.POST.get('zip', ''),
+			'number' : request.POST.get('number', ''),
+			
+			}
+		message = "\n".join(body.values())
+		email = request.POST.get('email', '')			
+		try:
+			send_mail(subject, message, email,['imarree33@gmail.com'],fail_silently=False, html_message=None)
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+	return render(request, 'd2l_attend_training.html')
+
+#views for D2L scheduleTraining form that is functioning to send to client
+def scheduleTraining(request):
+	if request.method == 'POST':
+		subject = "Darkness to Light : Schedule Training"
+		body = {
+			'name':request.POST.get('name', ''),
+			'organizationName' : request.POST.get('organizationName', ''),
+			'address' : request.POST.get('address', ''),
+			'city' : request.POST.get('city', ''),
+			'state': request.POST.get('state', ''),
+			'zipcode' : request.POST.get('zip', ''),
+			'number' : request.POST.get('number', ''),
+			'aboutEvent' : request.POST.get('aboutEvent', ''),
+			
+			}
+		message = "\n".join(body.values())
+		email = request.POST.get('email', '')			
+		try:
+			send_mail(subject, message, email,['imarree33@gmail.com'],fail_silently=False, html_message=None)
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+	return render(request, 'd2l_schedule_training.html')
+
+#views for GI: Host Event form that is functioning to send to client
+def hostEvent(request):
+	if request.method == 'POST':
+		subject = "Get Involved: Host Event"
+		body = {
+			'name':request.POST.get('name', ''),
+			'organizationName' : request.POST.get('organizationName', ''),
+			'address' : request.POST.get('address', ''),
+			'citySTATEzip' : request.POST.get('citySTATEzip', ''),
+			#'state': request.POST.get('state', ''),
+			#'zipcode' : request.POST.get('zip', ''),
+			'email' : request.POST.get('email', ''),
+			'number' : request.POST.get('number', ''),
+			'aboutEvent' : request.POST.get('aboutEvent', ''),
+			
+			}
+		message = "\n".join(body.values())
+		email = request.POST.get('email', '')			
+		try:
+			send_mail(subject, message, email,['imarree33@gmail.com'],fail_silently=False, html_message=None)
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+	return render(request, 'getinvolved_host_event.html')
+
+
+#views for GI: Volunteer an Event form that is functioning to send to client
+def volunteerEvent(request):
+	if request.method == 'POST':
+		subject = "Get Involved: Volunteer for an Event"
+		body = {
+			'name':request.POST.get('name', ''),
+			'number' : request.POST.get('number', ''),
+			'email' : request.POST.get('email', ''),
+			'volunteerType' : request.POST.get('volunteerType', ''),
+			
+			}
+		message = "\n".join(body.values())
+		email = request.POST.get('email', '')			
+		try:
+			send_mail(subject, message, email,['imarree33@gmail.com'],fail_silently=False, html_message=None)
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+	return render(request, 'getinvolved_volunteer.html')
