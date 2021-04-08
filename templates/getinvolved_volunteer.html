@@ -20,25 +20,24 @@
           <div>
               <p class="para-text-1">Get Involved</p>
 
-              <form class="volunteer-form"action = "" method="POST">
-                {% csrf_token %}
+              <form class="volunteer-form">
                   <div class="row">
                       <div class="col-6 left-padding-0">
                           <div class="form-group">
-                              <input type="text" class="form-control input-box-shadow name-form-control" id="name" name="name" placeholder="Name" />
+                              <input type="text" class="form-control input-box-shadow name-form-control" id="userName" aria-describedby="userName" placeholder="Name" />
                           </div>
                       </div>
                       <div class="col-6 padding-right-0">
                           <div class="form-group">
-                              <input type="tel" class="form-control input-box-shadow email-form-control" id="number" name="number" placeholder="Phone Number" />
+                              <input type="email" class="form-control input-box-shadow email-form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Phone Number" />
                           </div>
                       </div>
                   </div>
                   <div class="form-group">
-                      <input type="email" class="form-control input-box-shadow" id="email" name="email" placeholder="Email" />
+                      <input type="text" class="form-control input-box-shadow" id="volunteerRef" aria-describedby="volunteerRef" placeholder="Email" />
                   </div>
                   <!-- gives users dropdown menu of how they want to volunteer -->
-                  <select class="form-control input-box-shadow" id="volunteerType" name = "volunteerType" placeholder="Volunteer Type">
+                  <select class="form-control input-box-shadow" id="volunteerType" placeholder="Volunteer Type">
                     <option>Student Intern</option>
                     <option>Fundraising</option>
                     <option>Volunteer Group</option>
