@@ -7,55 +7,56 @@
 <div id="header"></div>
 
     <!-- overall design is from bootstrap -->
-    <!-- the design is working, put the id and aria-describedby attributes are not correct -->
+    <!-- the design is working, put the id and name attributes are not correct -->
 
   <div class="section volunteer-section">
       <div class="container">
           <div>
               <p class="para-text-1">Schedule a Darkness to Light Training for Your Organization</p>
 
-              <form class="volunteer-form">
+              <form action = "" method="POST" class="volunteer-form">
+                {% csrf_token %}
                   <div class="row">
                       <div class="col-6 left-padding-0">
                           <div class="form-group">
-                              <input type="text" class="form-control input-box-shadow name-form-control" id="userName" aria-describedby="userName" placeholder="Name" />
+                              <input type="text" class="form-control input-box-shadow name-form-control" id="name" name="name" placeholder="Name" />
                           </div>
                       </div>
                       <div class="col-6 padding-right-0">
                           <div class="form-group">
-                              <input type="email" class="form-control input-box-shadow email-form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Organization Name" />
+                              <input type="text" class="form-control input-box-shadow email-form-control" id="organizationName" name="organizationName" placeholder="Organization Name" />
                           </div>
                       </div>
                   </div>
                   <div class="form-group">
-                      <input type="text" class="form-control input-box-shadow" id="volunteerRef" aria-describedby="volunteerRef" placeholder="Address" />
+                      <input type="text" class="form-control input-box-shadow" id="address" name="address" placeholder="Address" />
                   </div>
                   <div class="row">
                     <div class="col-6 left-padding-0">
                         <div class="form-group">
-                            <input type="text" class="form-control input-box-shadow name-form-control" id="userName" aria-describedby="userName" placeholder="City" />
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="city" name="city" placeholder="City" />
                         </div>
                     </div>
                     <div class="col-6 padding-right-0">
                         <div class="form-group">
-                            <input type="email" class="form-control input-box-shadow email-form-control" id="userEmail" aria-describedby="emailHelp" placeholder="State" />
+                            <input type="text" class="form-control input-box-shadow email-form-control" id="state" name="state" placeholder="State" />
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6 left-padding-0">
                         <div class="form-group">
-                            <input type="text" class="form-control input-box-shadow name-form-control" id="userName" aria-describedby="userName" placeholder="Zip" />
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="zipcode" name="zipcode" placeholder="Zip" />
                         </div>
                     </div>
                     <div class="col-6 padding-right-0">
                         <div class="form-group">
-                            <input type="email" class="form-control input-box-shadow email-form-control" id="userEmail" aria-describedby="emailHelp" placeholder="Telephone Number" />
+                            <input type="tel" class="form-control input-box-shadow email-form-control" id="number" name="number" placeholder="Telephone Number" />
                         </div>
                     </div>
                 </div>
                   <div class="form-group">
-                      <textarea class="form-control input-box-shadow event-textarea" id="aboutEvent" rows="3" placeholder="Date and Time You Would Like to Schedule the Training"></textarea>
+                      <textarea class="form-control input-box-shadow event-textarea" name = "aboutEvent" id="aboutEvent" rows="3" placeholder="Date and Time You Would Like to Schedule the Training"></textarea>
                   </div>
                   <button type="submit" class="btn btn-primary volunteer-btn">Submit Request</button>
               </form>
