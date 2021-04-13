@@ -182,7 +182,7 @@ def attendTraining(request):
 			send_mail(subject, message, email,['imarree33@gmail.com'],fail_silently=False, html_message=None)
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
-	return render(request, 'd2l_attend_training.html')
+	return render(request, 'd2l_attendTraining.html')
 
 #views for D2L scheduleTraining form that is functioning to send to client
 def scheduleTraining(request):
@@ -205,7 +205,7 @@ def scheduleTraining(request):
 			send_mail(subject, message, email,['imarree33@gmail.com'],fail_silently=False, html_message=None)
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
-	return render(request, 'd2l_schedule_training.html')
+	return render(request, 'd2l_scheduleTraining.html')
 
 #views for GI: Host Event form that is functioning to send to client
 def hostEvent(request):
@@ -229,7 +229,7 @@ def hostEvent(request):
 			send_mail(subject, message, email,['imarree33@gmail.com'],fail_silently=False, html_message=None)
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
-	return render(request, 'getinvolved_host_event.html')
+	return render(request, 'get_involved_host_event.html')
 
 
 #views for GI: Volunteer an Event form that is functioning to send to client
@@ -249,4 +249,4 @@ def volunteerEvent(request):
 			send_mail(subject, message, email,['imarree33@gmail.com'],fail_silently=False, html_message=None)
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
-	return render(request, 'getinvolved_volunteer.html')
+	return render(request, 'get_involved_volunteer.html')
