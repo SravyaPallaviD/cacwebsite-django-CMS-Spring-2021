@@ -59,19 +59,24 @@ def cannon_cpit_view(request, *args, **kwargs):
 # view for our team page
 def teams_view(request, *args, **kwargs):
 	objs5 = Team.objects.all()
-	objs6 = ExecutiveCommittee.objects.all()
-	objs7 = BoardMember.objects.all()
-
+	
 	team_context = {
-					'objs5': objs5 ,
-					'objs6': objs6,
-					'objs7': objs7,
+					'objs5': objs5 ,				
 	}
 	return render(request, 'our_team.html', team_context)
 
-# view for ourteam community partners page
-def ourteam_communitypartners_view(request, *args, **kwargs):
-	return render(request, 'ourteam_communitypartners.html', {})
+# view for board of directors
+def board_of_directors_view(request, *args, **kwargs):
+	directors = ExecutiveCommittee.objects.all()
+	members = BoardMember.objects.all()
+
+	board_context = {
+					'directors': directors,
+					'members': members,
+	}
+
+	return render(request, 'board_of_directors.html', board_context)
+
 
 # view for Family services page
 def family_services_view(request, *args, **kwargs):
