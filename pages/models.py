@@ -55,6 +55,9 @@ class Team(models.Model):
 class ExecutiveCommittee(models.Model):
 	name = models.CharField(max_length = 120)
 	title = models.CharField(max_length = 120, default = None)
+	
+	class Meta:
+        	verbose_name_plural = "Directors"
 
 #Model for editing the Board members on Our Team page
 class BoardMember(models.Model):
