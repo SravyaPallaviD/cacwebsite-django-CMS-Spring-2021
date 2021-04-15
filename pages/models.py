@@ -85,3 +85,11 @@ class NewsLetter(models.Model):
 	title = models.CharField(max_length = 120)
 	date = models.DateField(auto_now = False, auto_now_add = False)
 	description = models.TextField() 
+	
+# Model for GratitudeSponsors
+class GratitudeCards(models.Model):
+	card_image = models.ImageField(upload_to = 'pics', default = 'default.jpg')
+	title = models.CharField(max_length = 120, default = 'Add title')
+	description = models.TextField(default = 'Add description')
+	sponsorsText = models.TextField(default = 'Add Sponsors')							
+	buttonID = models.CharField(max_length = 60, default = 'Add an ID')
