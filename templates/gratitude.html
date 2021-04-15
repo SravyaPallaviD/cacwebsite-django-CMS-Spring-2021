@@ -3,10 +3,73 @@
 {% load static %}
 {% static "images" as baseUrl %}
 <body>
-{% block content %}
-<h1> This is a Gratitude Page </h1>
+	{% block content  %}
 
-{% endblock %}
+<img src="/static/images/20th anniversary.png"class="event-logo">
+<div class="conatiner post-body">
+
+    <h1 class="heading-1">Gratitudes</h1>
+    <div class="baseline-1"></div>
+    <div class="baseline-2"></div>
+
+    <!-- each row is an event and contains left and right content. This alternates which sides
+    the pictures and text are located -->
+     
+   
+	{% for gra in objs12 %}
+    
+        {% if forloop.counter|divisibleby:"2" %}
+        <div class="row content-row">
+            <div class="col-6 img-col">
+				<img src="{{gra.card_image.url}}">
+            </div>
+            <div class="col-6 right-content">
+                <h3 class="content-h3">{{gra.title}}</h3>
+                <span class="right-content-span">{{gra.description}}</span>
+
+              <br><br>
+				<div class="container">
+					  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{gra.buttonID}}">We would like to thank the following</button>
+					  <div id="{{gra.buttonID}}" class="collapse">
+					  	<br><br>
+
+					    {{gra.sponsorsText | linebreaks}}
+					  </div>
+					</div>
+
+
+        </div>
+            </div>
+
+        
+        {% else %}
+         <div class="row content-row">
+            <div class="col-6 left-content">
+            <h3 class="content-h3">{{gra.title}}</h3>
+            <span class="right-content-span">{{gra.description}}</span>
+            <br><br>
+				<div class="container">
+					  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{gra.buttonID}}">We would like to thank the following</button>
+					  <div id="{{gra.buttonID}}" class="collapse">
+
+
+					    {{gra.sponsorsText | linebreaks}}
+					  </div>
+					</div>
+
+
+        </div>
+        <div class="col-6 img-col">
+				<img src={{gra.card_image.url}}>
+        </div>
+        
+        </div>
+        {% endif %}
+  {% endfor %}
+
+
+
+	{% endblock %}
 
 </body>
 </html>
