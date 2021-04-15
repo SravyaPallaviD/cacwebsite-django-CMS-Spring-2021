@@ -135,7 +135,13 @@ def mediainfo_view(request, *args, **kwargs):
 
 # view for gratitude page
 def gratitude_view(request, *args, **kwargs):
-	return render(request, 'gratitude.html', {})
+	objs12 = GratitudeCards.objects.all()
+	
+	gratitude_context = {
+							'objs12' : objs12,
+	}
+	return render(request, 'gratitude.html', gratitude_context)
+
 # view for home page.
 def home_view(request, *args, **kwargs):
 
