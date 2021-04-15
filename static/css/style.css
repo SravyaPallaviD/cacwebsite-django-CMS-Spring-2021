@@ -381,6 +381,34 @@ footer p {
     padding: 20px;
 }
 
+/* background image for gratitudes page */
+.gImg{
+    position: relative;
+    background-image: url("/static/images/gratitude_background.jpg");
+    min-height: 400px;
+    opacity: 0.80;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    margin-bottom: 20px;
+}
+.gText{
+    position: absolute;
+    top:50%;
+    width:100%;
+    text-align: center;
+    color: #000;
+    font-size:27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+.gText .border {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
+
 /* background image for board and committee */
 .pImg1{
     position: relative;
@@ -809,6 +837,14 @@ footer p {
     margin: auto;
 }
 
+.gratitude-body {
+    background: #FFFFFF;
+    padding: 56px;
+    width: 90%;
+    margin: auto;
+    color: black;
+}
+
 .heading-1 {
     padding: 0;
     border: 0;
@@ -854,11 +890,25 @@ footer p {
     position: relative;
 }
 
+.right-content-gratitude, .left-content-gratitude {
+    color: black;
+    position: relative;
+}
+
 .right-content {
     text-align: right;
 }
 
 .left-content {
+    text-align: left;
+    ;
+}
+
+.right-content-gratitude {
+    text-align: right;
+}
+
+.left-content-gratitude {
     text-align: left;
     ;
 }
