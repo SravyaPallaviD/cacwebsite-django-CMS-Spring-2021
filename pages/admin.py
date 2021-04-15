@@ -19,3 +19,17 @@ admin.site.register(Event)
 admin.site.register(EventTopImage)
 admin.site.register(PressRelease)
 admin.site.register(NewsLetter)
+
+class PostImageAdmin(admin.StackedInline):
+	model = PostImage
+
+@admin.register(GratitudeCards)
+class PostAdmin(admin.ModelAdmin):
+	inlines = [PostImageAdmin]
+
+	class Meta:
+		model = GratitudeCards
+
+@admin.register(PostImage)
+class PostImageAdmin(admin.ModelAdmin):
+	pass
