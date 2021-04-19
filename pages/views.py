@@ -140,7 +140,17 @@ def mediainfo_view(request, *args, **kwargs):
 
 # view for gratitude page
 def gratitude_view(request, *args, **kwargs):
-	return render(request, 'gratitude.html', {})
+	category = GratitudeCards.objects.all()
+	multipleimages = PostImage.objects.all()
+
+	
+	gratitude_context = {
+							'category' : category,
+							'multipleimages' : multipleimages,
+	}
+	return render(request, 'gratitude.html', gratitude_context)
+
+
 # view for home page.
 def home_view(request, *args, **kwargs):
 
