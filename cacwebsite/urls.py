@@ -24,8 +24,9 @@ from pages.views import home_view
 from pages.views import header_footer_view
 from pages.views import cannon_services_view, rutherford_services_view,d2l_view
 from pages.views import d2l_schedule_training_view, d2l_attend_training_view, rutherford_cpit_view, cannon_d2l_view, cannon_cpit_view
-from pages.views import teams_view, oboard_of_directors_view, family_services_view, events_view, getinvolved_view, getinvolved_volunteer_view
+from pages.views import teams_view, board_of_directors_view, resources_view, events_view, getinvolved_view, getinvolved_volunteer_view, contact_family_coordinator_view
 from pages.views import getinvolved_d2l_view, getinvolved_hostanevent_view, gi_volunteer_view, press_release_view,newsletter_view, mediainfo_view, gratitude_view
+
 urlpatterns = [
 	path('home/', home_view),
 	path('cannon_services/',cannon_services_view),
@@ -38,7 +39,8 @@ urlpatterns = [
 	path('cannon_services/cpit/',cannon_cpit_view),
 	path('our_team/', teams_view ),
 	path('our_team/board_of_directors/', board_of_directors_view),
-	path('family_services/', family_services_view),
+	path('resourses/', resources_view),
+	path('resourses/contact_family_coordinator/', contact_family_coordinator_view),
 	path('events/', events_view),
 	path('get_involved/', getinvolved_view),
 	path('get_involved/getinvolved_volunteer/', getinvolved_volunteer_view),
@@ -52,7 +54,6 @@ urlpatterns = [
 	path('press_releases/media_info/', mediainfo_view),
 	path('gratitude/', gratitude_view),
     path('admin/', admin.site.urls),
-
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

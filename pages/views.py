@@ -7,8 +7,8 @@ from .models import Image1
 from .models import Image2
 from .models import Image3
 from .models import Statisticscannon
-from .models import Team, ExecutiveCommittee, BoardMember, Event, EventTopImage, PressRelease, NewsLetter
-
+from .models import Team, ExecutiveCommittee, BoardMember, Event, EventTopImage, PressRelease, NewsLetter, Resource, Link
+#from .models import Resource, Link
 
 # Create your views here.
 #view for header and footer that is common for all the pages
@@ -79,8 +79,8 @@ def board_of_directors_view(request, *args, **kwargs):
 
 
 # view for Family services page
-def family_services_view(request, *args, **kwargs):
-	return render(request, 'family_services.html', {})
+def resourses_view(request, *args, **kwargs):
+	return render(request, 'resourses.html', {})
 
 # view for events page
 def events_view(request, *args, **kwargs):
@@ -265,3 +265,36 @@ def volunteerEvent(request):
 		except BadHeaderError:
 			return HttpResponse('Invalid header found.')
 	return render(request, 'getinvolved_volunteer.html')
+
+# View for resourses page
+def resources_view(request, *args, **kwargs):
+	objs = Resource.objects.all()
+	context = {
+		'objects' : objs,
+	}
+	return render(request, 'resourses.html', context)
+
+# View for contact family coordinator form
+def contact_family_coordinator_view(request, *args, **kwargs):
+	return render(request, 'contact_family_coordinator.html', {})
+
+#views for contact family coordinator form that is functioning to send to client
+def contactCoordinator(request):
+	if request.method == 'POST':
+		subject = "Darkness to Light : Attend Training"
+		body = {
+			'name':request.POST.get('name', ''),
+			'address' : request.POST.get('address', ''),
+			'city' : request.POST.get('city', ''),
+			'state': request.POST.get('state', ''),
+			'zipcode' : request.POST.get('zip', ''),
+			'number' : request.POST.get('number', ''),
+			'the_message' : request.POST.get('msg', ''),
+			}
+		message = "\n".join(body.values())
+		email = request.POST.get('email', '')			
+		try:
+			send_mail(subject, message, email,['my3c@mtmail.mtsu.edu'],fail_silently=False, html_message=None)
+		except BadHeaderError:
+			return HttpResponse('Invalid header found.')
+	return render(request, 'contact_family_coordinator.html')

@@ -1,0 +1,31 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+	{% block content %}
+  <main>
+    <section id="main-wrapper"> 
+        <div class="row justify-content-center my_row">
+          {% for obj in objects %}
+          <div class="col-s-4 my_col">
+            <img src="{{ obj.image.url }}" style="width: 298px; height: 150px">
+            <h2 class="resourse-headers" style="margin-top: 5px">{{ obj.title }}</h2>
+            <ul class="link-list"> 
+              {% for lnk in obj.links.all %}
+              <li><a class="resourse-links" href="{{ lnk.url }} " target="_blank" style="text-decoration:none"> {{ lnk.name }} </a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          {% endfor %}
+          <h1 class="col-md-12 resourses-buttons-header"></h1>
+          <div class="resourses-buttons">
+            <a href="/resourses/contact_family_coordinator">Contact the Family Services Coordinator</a>
+            <a href="/rutherford_services/d2l/d2l_attend_training">Attend a Darkness to Light training</a>
+          </div>
+        </div>
+    </section>
+  </main>
+	{% endblock %}
+</body>
+</html>

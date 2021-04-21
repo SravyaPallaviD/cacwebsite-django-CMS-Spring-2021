@@ -109,3 +109,16 @@ class PostImage(models.Model):
 
 	def __str__(self):
 		return self.post.title 
+
+# model for resourses link
+class Link(models.Model):
+	name = models.CharField(max_length = 100)
+	url = models.URLField(max_length=250)
+
+# model for resourses boxes
+class Resource(models.Model):
+	image = models.ImageField(upload_to='pics')
+	title = models.CharField(max_length=100, default='')
+	links = models.ManyToManyField(Link)
+	#links = models.ForeignKey(Link, on_delete=models.PROTECT, null=True)
+
