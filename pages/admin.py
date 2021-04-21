@@ -4,7 +4,7 @@ from .models import Image1
 from .models import Image2
 from .models import Image3
 from .models import Statisticscannon
-from .models import Team, ExecutiveCommittee, BoardMember, Event, EventTopImage, PressRelease, NewsLetter
+from .models import Team, ExecutiveCommittee, BoardMember, Event, EventTopImage, PressRelease, NewsLetter, GratitudeCards, PostImage
 # Register your models here.
 
 admin.site.register(Statistics)
