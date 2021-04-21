@@ -23,11 +23,12 @@
 	{% for gratitudes in category %}
     
         {% if forloop.counter|divisibleby:"2" %}
+        <hr>
         <div class="row content-row">
-            <div class="col-6 img-col">
-				<img src="{{gratitudes.card_image.url}}">
+            <div class="col-md-6 img-col ">
+				<img class="img-fluid" src="{{gratitudes.card_image.url}}">
             </div>
-            <div class="col-6 right-content-gratitude">
+            <div class="col-md-6 right-content-gratitude">
                 <h3 class="content-h3">{{gratitudes.title}}</h3>
                 <span class="right-content-span">{{gratitudes.description}}</span>
 
@@ -43,7 +44,6 @@
         				{% endfor %}
  						</div>
 
- 						<br><br>
 
 					    {{gratitudes.sponsorsText | linebreaks}}
 					  </div>
@@ -55,8 +55,9 @@
 
         
         {% else %}
+        <hr>
          <div class="row content-row">
-            <div class="col-6 left-content-gratitude">
+            <div class="col-md-6 left-content-gratitude">            
             <h3 class="content-h3">{{gratitudes.title}}</h3>
             <span class="right-content-span">{{gratitudes.description}}</span>
             <br><br>
@@ -80,15 +81,15 @@
 
 
         </div>
-        <div class="col-6 img-col">
-				<img src={{gratitudes.card_image.url}}>
+        <div class="col-md-6 img-col">
+				<img class="img-fluid" src={{gratitudes.card_image.url}}>
         </div>
         
         </div>
         {% endif %}
   {% endfor %}
-
-
+<hr>
+</div>
 
 	{% endblock %}
 
