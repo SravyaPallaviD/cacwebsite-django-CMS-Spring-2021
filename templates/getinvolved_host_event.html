@@ -1,0 +1,53 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+{% block content %}
+<div class="conatiner post-body bg-light-gray host-event-container">
+  <h1 class="host-event-title">Host an Event</h1>
+  <div class="baseline-1"></div>
+  <div class="baseline-2"></div>
+  <p class="events-para">Would like to host an event? <br />
+      Send us the information!</p>
+        <!-- bootstrap form design, ids and aria-describeby attributes not hooked up -->
+        <form action = "{% url 'host_an_event' %}" method = "post">
+                {% csrf_token %}
+          <div class="event-form-body">
+              <form class="event-form">
+                  <div class="form-group">
+                      <input type="text" class="form-control input-box-shadow name-form-control" id="username" name = "username" aria-describedby="userName" placeholder="Contact Name" />
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control input-box-shadow name-form-control" id="organizationname" name = "organizationname" aria-describedby="userName" placeholder="Organization Name" />
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control input-box-shadow name-form-control " id="mailingaddress" name = "mailingaddress" aria-describedby="userName" placeholder="Mailing Address" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control input-box-shadow name-form-control " id="address" name = "address" aria-describedby="userName" placeholder="City, State, Zip" />
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control input-box-shadow name-form-control" id="userEmail" name ="userEmail" aria-describedby="Email" placeholder="Email Address" />
+                </div>
+                <div class="form-group">
+                    <input type="text" id="phonenumber" name = "phonenumber" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="US" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="Telephone Number " class="form-control input-box-shadow name-form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]" />
+                </div>
+                  <div class="form-group">
+                      <textarea class="form-control input-box-shadow name-form-control event-textarea" id="aboutEvent" name = "aboutevent" rows="3" placeholder="What kind of event would you like to host?"></textarea>
+                  </div>
+
+                  <div class="form-group"> 
+                    <input type="text" name="emailId" class="form-control input-box-shadow name-form-control email-form-control"
+                    aria-describedby="email" readonly="true" size="75" value="Contact Name:{{member.name}} - {{member.job_title}}">
+                  </div>
+                 
+                  <button type="submit" class="btn btn-primary submit-btn">Submit Request</button>
+              </form>
+          </div>
+
+</div>
+
+{% endblock %}
+</body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+  {% block content %}
+<div id="header"></div>
+
+    <!-- overall design is from bootstrap -->
+    <!-- the design is working, put the id and aria-describedby attributes are not correct -->
+
+  <div class="section volunteer-section">
+      <div class="container">
+          <div>
+              <p class="para-text-1">Attend a Darkness to Light Training</p>
+              <form action = "{% url 'd2l_attend_training' %}" method = "post">
+                {% csrf_token %}
+              <form class="volunteer-form">
+
+                  <div class="row">
+                      <div class="col-6 left-padding-0">
+                          <div class="form-group">
+                              <input type="text" class="form-control input-box-shadow name-form-control" id="name" name = "username" aria-describedby="Name" placeholder="Name" />
+                          </div>
+                      </div>
+                      <div class="col-6 padding-right-0">
+                          <div class="form-group">
+                              <input type="text" class="form-control input-box-shadow name-form-control" id="address" name = "address" aria-describedby="Address" placeholder="Address" />
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-6 left-padding-0">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="city" name="city" aria-describedby="City" placeholder="City" />
+                        </div>
+                    </div>
+                    <div class="col-6 padding-right-0">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="state" name = "state" aria-describedby="State" placeholder="State" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6 left-padding-0">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="zip" name = "zip" aria-describedby="Zip" placeholder="Zip" />
+                        </div>
+                    </div>
+                    <div class="col-6 padding-right-0">
+                        <div class="form-group">
+                           
+                           <input type="text" id="phonenumber" name = "phonenumber" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="US" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="Telephone Number " class="form-control input-box-shadow name-form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]">
+                        </div>
+                    </div>
+                </div>
+
+                  <div class="form-group">
+                      <input type="text" class="form-control input-box-shadow name-form-control" id="userEmail" name ="userEmail" aria-describedby="Email" placeholder="Email Address" />
+                  </div>
+                  <div class="form-group"> 
+                    <input type="text" name="emailId" class="form input-box-shadow email-form-control"
+                    aria-describedby="Contact" readonly="true" size="75" value="Contact Name:{{member.name}} - {{member.job_title}}">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary volunteer-btn">Submit Request</button>
+                  
+              </form>
+              
+          </div>
+      </div>
+  </div>
+  <p class="d2l-attend-training-text">We will contact you with information on upcoming trainings that are open to the public.</p>
+
+  
+{% endblock %}
+</body>
+</html>

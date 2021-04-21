@@ -1,0 +1,79 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+  {% block content %}
+<div id="header"></div>
+
+    <!-- overall design is from bootstrap -->
+    
+
+  <div class="section volunteer-section">
+      <div class="container">
+          <div>
+              <p class="para-text-1">Schedule a Darkness to Light Training for Your Organization</p>
+              <form action = "{% url 'd2l_schedule_training' %}" method = "post">
+                {% csrf_token %}
+              <form class="volunteer-form">
+                
+                  <div class="row">
+                      <div class="col-6 left-padding-0">
+                          <div class="form-group">
+                              <input type="text" class="form-control input-box-shadow name-form-control"  id="name" name="name" aria-describedby="username" placeholder="Name" />
+                          </div>
+                      </div>
+                      <div class="col-6 padding-right-0">
+                          <div class="form-group">
+                              <input type="text" class="form-control input-box-shadow name-form-control" id="organizationname" name = "organizationname" aria-describedby="userName" placeholder="Organization Name" />
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control input-box-shadow name-form-control" id="volunteerRef" name = "address" aria-describedby="volunteerRef" placeholder="Address" />
+                  </div>
+                  <div class="row">
+                    <div class="col-6 left-padding-0">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="city" name = "city" aria-describedby="userName" placeholder="City" />
+                        </div>
+                    </div>
+                    <div class="col-6 padding-right-0">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="state" name = "state" aria-describedby="state" placeholder="State" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6 left-padding-0">
+                        <div class="form-group">
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="zip" name = "zip" aria-describedby="userName" placeholder="Zip" />
+                        </div>
+                    </div>
+                    <div class="col-6 padding-right-0">
+                        <div class="form-group">
+                            <input type="text" id="phonenumber" name = "phonenumber" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="US" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="Telephone Number " class="form-control input-box-shadow name-form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]" />
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                      <input type="text" class="form-control input-box-shadow name-form-control" id="userEmail" name ="userEmail" aria-describedby="Email" placeholder="Email Address" />
+                  </div>
+                  <div class="form-group">
+                      <textarea class="form-control input-box-shadow event-textarea" id="aboutEvent" name = "aboutevent" rows="3" placeholder="Date and Time You Would Like to Schedule the Training"></textarea>
+                  </div>
+
+                  <div class="form-group"> 
+                    <input type="text" name="emailId" class="form input-box-shadow email-form-control"
+                    aria-describedby="email" readonly="true" size="75" value="Contact Name:{{member.name}} - {{member.job_title}}">
+                  </div>
+
+                  <button type="submit" class="btn btn-primary volunteer-btn">Submit Request</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+{% endblock %}
+</body>
+</html>

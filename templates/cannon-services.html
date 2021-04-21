@@ -1,0 +1,69 @@
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<html>
+<!--replacing the header and footer using header and footer html page from cms-->
+<body>
+  {% block content %}
+<!--<div id="header"></div>-->
+
+            <!-- format is picture to the right, text to the left and then it switches sides for each section-->
+          <div class = "CCImg">
+              <h1>Cannon County</h1>
+          </div>
+
+          <h1 id="services-header"> Services </h1>
+
+            {% for services in cannonservices %}
+            {% if forloop.counter|divisibleby:"2" %}
+          <div class = "service-block">
+            <div class = "block-item">
+              <img src = "{{services.image.url}}" width= "440ppx" height="330ppx">
+              </div>
+              <div class = "block-item">
+                <h1>{{services.title}}</h1>
+                <p>
+                  {{services.description|linebreaks}}
+                </p>
+                </div>
+                </div>
+
+                {% else %}
+
+                  <div class="service-block">
+                    <div class="block-item">
+                      <h1>{{services.title}}</h1>
+                      <p>
+                       {{services.description|linebreaks}}
+                      </p>
+                    </div>
+                    <div class="block-item">
+                      <img src = "{{services.image.url}}" width = "440ppx" height = "330ppx">
+                    </div>
+                  </div>
+
+                    {% endif %}
+        {% endfor %}
+
+           <!-- just like the home page statistics, this shows the running stats for cannon county -->
+          <div class="statistics-cannon">
+            <div class="statistics-header"><h2>Since 2008</h2></div>
+            <div class="statistics-flexbox">
+                <div class="statistics-item">
+                    <div class="counter" data-target= "{{ Childabusecasescannon }}" >0</div>
+                    <p class="stat-name">Child Abuse Cases Investigated</p>
+                </div>
+                <div class="statistics-item">
+                    <div class="counter" data-target= "{{ peopleservedcannon }}" >0</div>
+                    <p class="stat-name">People Served</p>
+                </div>
+
+            </div>
+         </div>
+
+         <!-- this script gives the "totaling up" effect on the statistics -->
+<script type="text/javascript" src="js/cannon-script.js"></script>
+{% endblock %}
+</body>
+
+</html>

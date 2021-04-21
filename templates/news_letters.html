@@ -1,0 +1,36 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+{% block content %}
+
+<!-- design from bootstrap. Each section has the newsletter tite, date and a link to the network for good newsletter -->
+
+<h1 class="media-headers">Newsletters</h1>
+
+<div class="list-group">
+{% for let in newsletter %}	
+  <a href="{{ let.description }}" class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ let.title }}</h5>
+      <small>{{ let.date }}</small>
+    </div>
+    <p class="mb-1">{{ let.date }}</p>
+    <small>Click to See Full</small>
+  </a>
+  {% endfor %}
+  
+
+<!-- network for good newsletter signup form -->
+<div class="newsletter-signup">
+  <h2>Sign Up For Newsletters</h2>
+  <a id = "newsletter">
+  <iframe src="https://cacrutherford.dm.networkforgood.com/forms/63340?iframe=1" width="450" height="550" frameborder="0"></iframe>
+</a>
+</div>
+
+
+{% endblock %}
+</body>
+</html>

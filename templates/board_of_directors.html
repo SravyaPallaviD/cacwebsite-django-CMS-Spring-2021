@@ -1,0 +1,65 @@
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<html>
+<!--replacing the header and footer using header and footer html page from cms-->
+<body>
+
+  
+    {% block content %}
+
+      <!-- cac staff backgroun image -->
+        <div class = "pImg">
+              <div class = "pText">
+                <span class = "border">
+                    Board of Directors
+                </span>
+            </div>
+        </div>
+
+        <!-- background image for both committee and board -->
+        <div class = "pImg1">
+            <div class = "pText1">
+                <span class = "border1">
+                    Board Officers
+                </span>
+            </div>
+        </div>
+
+        <!-- each section has member name and job title -->
+        <div class="card-group">
+            {% for person in directors %}
+            <div class="card ot-flex-item" style="text-align: center;">                
+                <div class="card-body">
+                    <h4 class="card-title">{{person.name}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{person.title}}</h6>
+                    <!--<h6 class="card-subtitle mb-2 text-muted">{{person.subtitle}}</h6>-->
+                </div>
+            </div>
+                {% endfor %}
+            
+           </div> 
+
+        <div class = "pImg1">
+            <div class = "pText1">
+                <span class = "border1">
+                    Board Members
+                </span>
+            </div>
+        </div>
+
+        <div class="card-group">
+            {% for member in members %}
+            <div class="card ot-flex-item" style="width: 18rem; text-align: center;">
+                
+                <div class="card-body">
+                    <h4 class="card-title">{{member.name}}</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">{{member.title}}</h6>
+                </div>
+            </div>
+            {% endfor %}
+    	</div>
+    {% endblock %}
+
+    </body>
+ </html>

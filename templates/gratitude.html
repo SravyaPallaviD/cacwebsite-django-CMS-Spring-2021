@@ -1,0 +1,96 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+	{% block content  %}
+
+<div class = "gImg">
+              <div class = "gText">
+                <span class = "border">
+                    Gratitudes
+                </span>
+            </div>
+        </div>
+<div class="gratitude-body">
+
+   
+
+    <!-- each row is an event and contains left and right content. This alternates which sides
+    the pictures and text are located -->
+     
+   
+	{% for gratitudes in category %}
+    
+        {% if forloop.counter|divisibleby:"2" %}
+        <div class="row content-row">
+            <div class="col-6 img-col">
+				<img src="{{gratitudes.card_image.url}}">
+            </div>
+            <div class="col-6 right-content-gratitude">
+                <h3 class="content-h3">{{gratitudes.title}}</h3>
+                <span class="right-content-span">{{gratitudes.description}}</span>
+
+              <br><br>
+				<div class="container">
+					  <button type="button" class="btn btn-info" style="color:black;" data-toggle="collapse" data-target="#{{gratitudes.buttonID}}">We would like to thank the following</button>
+					  <div id="{{gratitudes.buttonID}}" class="collapse">
+					  	<br>
+					  	<div class="row">
+
+						{% for childimages in gratitudes.postimage_set.all %}
+							 <div class="col"><img width="150" src="{{childimages.image.url}}"></div>
+        				{% endfor %}
+ 						</div>
+
+ 						<br><br>
+
+					    {{gratitudes.sponsorsText | linebreaks}}
+					  </div>
+					</div>
+
+
+        </div>
+            </div>
+
+        
+        {% else %}
+         <div class="row content-row">
+            <div class="col-6 left-content-gratitude">
+            <h3 class="content-h3">{{gratitudes.title}}</h3>
+            <span class="right-content-span">{{gratitudes.description}}</span>
+            <br><br>
+				<div class="container">
+					  <button type="button" class="btn btn-info"  style="color: black;" data-toggle="collapse" data-target="#{{gratitudes.buttonID}}">We would like to thank the following</button>
+					  <div id="{{gratitudes.buttonID}}" class="collapse">
+
+					  	<br>
+					  	<div class="row">
+
+						{% for childimages in gratitudes.postimage_set.all %}
+							 <div class="col"><img width="150" src="{{childimages.image.url}}"></div>
+        				{% endfor %}
+ 						</div>
+
+
+
+					    {{gratitudes.sponsorsText | linebreaks}}
+					  </div>
+					</div>
+
+
+        </div>
+        <div class="col-6 img-col">
+				<img src={{gratitudes.card_image.url}}>
+        </div>
+        
+        </div>
+        {% endif %}
+  {% endfor %}
+
+
+
+	{% endblock %}
+
+</body>
+</html>

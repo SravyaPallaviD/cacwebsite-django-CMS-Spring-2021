@@ -1,0 +1,39 @@
+<html>
+{% extends 'header_and_footer.html' %}
+
+{% load static %}
+{% static "images" as baseUrl %}
+
+
+  <body>
+    {% block content %}
+      <!-- cac staff backgroun image -->
+        <div class = "pImg">
+              <div class = "pText">
+                <span class = "border">
+                    CAC Staff
+                </span>
+            </div>
+        </div>
+
+        <!-- cac staff, contains two pictures (one young one older), name, job title and an icon that links to their email -->
+        
+        <section class = "section-light">
+            
+            <div class="card-wrapper">
+                {% for memb in cacteam %}
+                <div class="ot-card">
+                    <img src={{memb.older_image.url}} class= "profile-img-front" onmousemove="this.src= '{{memb.child_image.url}}'" onmouseout="this.src='{{ memb.older_image.url }}'">
+                    <h2> {{ memb.name }}</h2>
+                    <p class="job-title">{{ memb.job_title }}</p>
+                    <p><a href="/our_team/contactus?id={{ memb.id }}"><i class="fas fa-envelope fa-3x"></i></a></p>
+                </div>
+
+                {% endfor %}
+               </div>
+        </section>
+
+
+    {% endblock %}
+    </body>
+ </html>

@@ -1,0 +1,81 @@
+
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+ <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+{% block content %}
+
+<div style = "margin:100px">
+	<center>
+	<h1> Contact </h1>
+	</center>
+	<form action = "{% url 'contactus' %}" method = "post">
+		{% csrf_token %}
+		<!--{{form.as_p}}-->
+		<div class = "form-row">
+			<div class = "form-group col-md-6">
+				<label for="message-firstname">FirstName</label>
+				<input type="text" name = "message-firstname" class="form-control" placeholder = "FirstName">
+			</div>
+			<div class = "form-group col-md-6">
+				<label for = "message-lastname">LastName</label>
+				<input type="text" name = "message-lastname" class="form-control" placeholder="LastName">
+			</div>
+		</div>
+		<div class= "form-row">
+			<div class = "form-group col-md-6">
+				<label for ="email">Enter your email</label>
+				<input type = "email" name = "email" class = "form-control" id = "email" placeholder="example@example.com">
+			</div>
+	
+		
+				
+		<select class="selectpicker form-control" data-live-search="true" id = "toEmail"
+		 name="toEmail">
+			<option data-content="toEmail">Email to</option>
+			{% for entry in teams %}
+			    {% if entry.id == member.id %}
+			    <option value="{{ entry.id }}" selected="true">{{ entry.name }} - {{entry.job_title}}
+			    </option>
+				{% else %}
+    			<option value="{{ entry.id }}">{{ entry.name }} - {{entry.job_title}}</option>
+    			{% endif %}
+			{% endfor %}
+		</select>
+	</div>
+
+		<div class = "form-row">
+			<div class = "form-group col-md-6">
+				<label for="message-subject">Subject</label>
+				<input type="text" name = "message-subject" class="form-control" placeholder = "Subject">
+			</div>
+			</div>
+		<div class = "form-row">
+			<div class = "form-group col-md-6">
+				<label for="message">Message</label>
+				<textarea name="message" name = "messge" class="form-control" placeholder="Your Message"></textarea>
+				</div>
+			</div>
+
+				<div class = "form-row">
+					<div class = "form-group col-md-6">
+						<button type = "submit" class = "btn btn-primary mb-2">Send Message</button>
+					</div>
+				</div>
+			
+	</form>
+		
+		
+</div>
+
+{% endblock %}
+</body>
+</html>

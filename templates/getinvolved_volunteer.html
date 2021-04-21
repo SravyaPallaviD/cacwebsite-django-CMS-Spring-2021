@@ -1,0 +1,59 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+{% block content %}
+<!-- background image -->
+<div class="volunteer-view">
+  <div class="header" id="parallex">
+      <div class="bg-image"></div>
+      <div class="heading-tag">
+          <h1>Volunteer</h1>
+      </div>
+  </div>
+</div>
+
+    <!-- design form bootstrap, id and aria-describeby not hooked up -->
+  <div class="section volunteer-section">
+      <div class="container">
+          <div>
+              <p class="para-text-1">Get Involved</p>
+              <form action = "{% url 'get_involved_volunteer' %}" method = "post">
+                {% csrf_token %}
+              <form class="volunteer-form">
+                  <div class="row">
+                      <div class="col-6 left-padding-0">
+                          <div class="form-group">
+                              <input type="text" class="form-control input-box-shadow name-form-control" id="username" name = 'username' aria-describedby="userName" placeholder="Name" />
+                          </div>
+                      </div>
+                      <div class="col-6 padding-right-0">
+                          <div class="form-group">
+                              <input type="text" id="phonenumber" name = "phonenumber" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="US" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="Telephone Number " class="form-control input-box-shadow name-form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]" />
+                          </div>
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <input type="text" class="form-control input-box-shadow name-form-control" id="userEmail" name ="userEmail" aria-describedby="Email" placeholder="Email Address" />
+                  </div>
+                  <!-- gives users dropdown menu of how they want to volunteer -->
+                  <select class="form-control input-box-shadow" id="volunteerType" name = "volunteertype" placeholder="Volunteer Type">
+                    <option>Student Intern</option>
+                    <option>Fundraising</option>
+                    <option>Volunteer Group</option>
+                    <option>Other</option>
+                  </select>
+                  <div class="form-group"> 
+                    <input type="text" name="emailId" class="form-control input-box-shadow name-form-control email-form-control"
+                    aria-describedby="email" readonly="true" size="75" value="Contact Name:{{member.name}} - {{member.job_title}}">
+                  </div>
+                  <button type="submit" class="btn btn-primary volunteer-btn">Submit</button>
+              </form>
+          </div>
+      </div>
+  </div>
+
+{% endblock %}
+</body>
+</html>

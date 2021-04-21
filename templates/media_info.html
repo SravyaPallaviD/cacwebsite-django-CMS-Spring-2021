@@ -1,0 +1,18 @@
+
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+{% block content %}
+<div class = "container">
+	{% for i in video %}
+	<h3 class='text-center mt-2 mb-2'>{{i.title}}</h3>
+	<video class="embed-responsive embed-responsive-16by9" controls="controls" >
+          <source src="{{ i.videofile.url }}" type="video/mp4" />
+        </video>
+        {% endfor %}
+{% endblock %}
+
+</body>
+</html>

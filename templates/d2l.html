@@ -1,0 +1,58 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+  {% block content %}
+<div id="header"></div>
+
+<!-- main darkness to light logo -->
+<img class="d2l-pictures" src="{% static 'images/d2l-logo.png' %}">
+
+<div class="d2l-text">
+  <h1>Additional Information</h1>
+  <p>{{description|linebreaks}}</p>
+
+</div>
+
+
+<!-- shows recent pictures of d2l trainings -->
+
+{% for imgs in imgd2l %}
+<img class = "d2l-pictures" src= {{imgs.image.url}}>
+{% endfor %}
+
+<!-- both buttons link to two form pages -->
+<h1 class="d2l-buttons-header">Want to help make a difference?</h1>
+<div class="d2l-buttons">
+  <a href="/rutherford_services/d2l/d2l_schedule_training">Schedule a Training</a>
+  <a href="/rutherford_services/d2l/d2l_attend_training">Attend a Training</a>
+</div>
+
+<!-- these are steps taking by darkness to light programs -->
+<div class="steps">
+  <div class="step step1">
+    <h4>Step 1:<br> LEARN THE FACTS</h3>
+    <p>1 in 10 children are sexually abused. 90% of them know their abuser.</p>
+  </div>
+  <div class="step step2">
+    <h4>Step 2:<br> MINIMIZE OPPORTUNITY</h3>
+    <p>Eliminate or reduce isolated, one-on-one situations to decrease risk for abuse.</p>
+  </div>
+  <div class="step step3">
+    <h4>Step 3:<br> TALK ABOUT IT</h3>
+    <p>Have open conversations with children about our bodies, sexual abuse, and boundaries.</p>
+  </div>
+  <div class="step step4">
+    <h4>Step 4:<br> RECOGNIZE THE SIGNS</h3>
+    <p>Know the signs of abuse to protect children from further harm.</p>
+  </div>
+  <div class="step step5">
+    <h4>Step 5:<br> REACT RESPONSIBLY</h3>
+    <p>Respond to risky behaviors and act on suspicions.</p>
+  </div>
+</div>
+
+{% endblock %}
+</body>
+</html>

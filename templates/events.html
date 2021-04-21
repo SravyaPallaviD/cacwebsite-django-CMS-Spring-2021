@@ -1,0 +1,60 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+{% block content %}
+<img src="{{eventheaderimg.image.url}}" class="event-logo">
+   <div class="conatiner post-body">
+    <h1 class="heading-1">Events</h1>
+  <div class="baseline-1" ></div>
+    <div class="baseline-2"></div>
+
+
+
+
+    <!-- each row is an event and contains left and right content. This alternates which sides
+    the pictures and text are located -->
+     
+   
+    {% for eve in eventdetails %}
+    
+        {% if forloop.counter|divisibleby:"2" %}
+         <div class="row content-row">
+            <div class="col-6 img-col">
+                <img src="{{eve.event_image.url}}">
+            </div>
+            <div class="col-6 right-content">
+                <h1>{{eve.date}}</h1>
+                <h3 class="content-h3">{{eve.event_title}}</h3>
+                <span class="right-content-span">{{eve.event_description}}</span>
+                <div class="right-join-btn">
+                    
+                    <button><a href = "{{eve.event_register}}">Register</a></button>
+                </div>
+            </div>
+       
+        </div>
+        {% else %}
+
+            <div class="row content-row">
+            <div class="col-6 left-content">
+            <h1>{{eve.date}}</h1>
+            <h3 class="content-h3">{{eve.event_title}}</h3>
+            <span class="right-content-span">{{eve.event_description}}</span>
+            <div class="right-join-btn">
+                <button><a href = "{{eve.event_register}}">Register</a></button>
+            </div>
+        </div>
+        <div class="col-6 img-col">
+            <img src="{{eve.event_image.url}}">
+        </div>
+        </div>
+        
+        {% endif %}
+  {% endfor %}
+   
+{% endblock %}
+
+</body>
+</html>

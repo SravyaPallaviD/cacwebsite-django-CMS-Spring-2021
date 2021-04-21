@@ -1,0 +1,25 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+{% block content %}
+
+<!-- bootstrap design. Each item contains press release title, date, small paragraph and a link to the document. These docs will need to be changed to pdfs -->
+<h1 class="media-headers">Press Releases</h1>
+<div class="list-group">
+	{% for release in pressrelease %}
+  <a href="{{ release.document.url }}" download = "{{ release.document.url }}"class="list-group-item list-group-item-action flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ release.title }}</h5>
+      <small>{{ release.date }}</small>
+    </div>
+    <p class="mb-1">{{ release.description }}</p>
+    <small>MORE</small>
+  </a>
+  {% endfor %}
+ 
+
+{% endblock %}
+</body>
+</html>

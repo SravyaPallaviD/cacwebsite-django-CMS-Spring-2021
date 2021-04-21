@@ -1,0 +1,102 @@
+{% extends 'header_and_footer.html' %}
+
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+<!-- home page -->
+    
+    {% block content %}
+  
+
+    <!-- Carousel of images on the home screen -->
+
+    <div id= "carouselExampleIndicators" class = "carousel slide" data-ride= "carousel">
+      <!--  Changing the controls to arrows to allow the user to add multiple images in future
+            <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>-->
+        <div class = "carousel-inner">
+            {% for item in carousel %}
+                
+            <div class = "carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                <img class = "d-block w-100" src = "{{item.carousel_picture.url}}" alt = "...">
+                <!-- contains the button that links users to different web pages -->
+                <div class="carousel-caption">
+                    <a href="{{item.btn_link}}" target="_blank"><button type="button" class="btn btn-default">{{item.btn_text}}</button></a>
+                </div>
+            </div>
+               
+                
+               
+            {% endfor %}
+           <a class ="carousel-control-prev" href = "#carouselExampleIndicators" role = "button" data-slide = "prev">
+                <span class = "carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class = "sr-only">Previous</span>
+            </a>
+            <a class = "carousel-control-next" href = "#carouselExampleIndicators" role = "button" data-slide = "next">
+                <span class = "carousel-control-next-icon" aria-hidden = "true"></span>
+                <span class = "sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
+    
+   <!-- running statistics of the CAC (will need to be added to cms) -->
+    <div class="statistics">
+            <div class="statistics-header"><h2>IN THE PAST 20 YEARS</h2></div>
+            <div class="statistics-flexbox">
+                <div class="statistics-item">
+                    
+                    <div class="counter" data-target="{{ peopleserved }}">0</div>
+                    <p class="stat-name">People Served</p>
+                   
+                </div>
+                <div class="statistics-item">
+                    <div class="counter" data-target="{{ Childabusecases }}">0</div>
+                    <p class="stat-name">Child Abuse Cases Investigated</p>
+                </div>
+               <div class="statistics-item">
+                    <div class="counter" data-target="{{ d2l }}">0</div>
+                    <p class="stat-name">Darkness to Light Trainees</p>
+                </div> 
+              
+    </div>
+
+        <!-- youtube video for cac -->
+        <div class="container my-4">
+          <div class="embed-responsive embed-responsive-16by9">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/kALhKx71dT8" allowfullscreen></iframe>
+          </div>
+      </div>
+
+      <!-- newsletter. Not hooked up yet. Have user fill out email and send them with the email to the newsletter page with the network for good newsletter form -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="content">
+                        <form>
+                            <h2>SUBSCRIBE TO OUR NEWSLETTER</h2>
+                            <div class="input-group">
+                                <input type="email" class="form-control" placeholder="Enter your email">
+                                <span class="input-group-btn">
+                                    <a href = '/press_releases/news_letters#newsletter' class = "btn btn-success">Join</a>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+</body>
+
+</html>

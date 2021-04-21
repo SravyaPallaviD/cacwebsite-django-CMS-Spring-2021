@@ -1,0 +1,29 @@
+<html>
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<body>
+  {% block content %}
+    <!-- background photo at top of page -->
+    <div class="get-involved-photo">
+    </div>
+    <!-- lists ways people can get involved and provides links to specified pages -->
+    <h1 class="get-involved-header">Three ways to get involved!</h1>
+    <div class="get-involved-list">
+        <div class="get-involved-list-item" style="background-color: rgb(86, 175, 225)">
+            <h3 style="line-height: 50px;">Volunteer your time</h3>
+            <a href="/get_involved/getinvolved_volunteer">Volunteer</a>
+        </div>
+        <div class="get-involved-list-item" style="background-color: rgb(145, 145, 145)">
+            <h3>Financially support services for child abuse victims</h3>
+            <a href="https://cacrutherford.networkforgood.com/projects/103408-donations-to-help-child-abuse-victims">Donate</a>
+        </div>
+        <div class="get-involved-list-item" style="background-color: rgb(7, 54, 90)">
+            <h3>Schedule a Darkness to Light training for your organization</h3>
+            <a href="/get_involved/d2l">Schedule</a>
+        </div>
+    </div>
+
+{% endblock %}
+</body>
+</html>
