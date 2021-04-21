@@ -21,11 +21,16 @@
         <section class = "section-light">
             
             <div class="card-wrapper">
+<<<<<<< HEAD
                 {% for memb in objs5 %}
+=======
+                {% for memb in cacteam %}
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                 <div class="ot-card">
                     <img src={{memb.older_image.url}} class= "profile-img-front" onmousemove="this.src= '{{memb.child_image.url}}'" onmouseout="this.src='{{ memb.older_image.url }}'">
                     <h2> {{ memb.name }}</h2>
                     <p class="job-title">{{ memb.job_title }}</p>
+<<<<<<< HEAD
                     <p><a href="mailto: ebenton@cacrutherford.org"><i class="fas fa-envelope fa-3x"></i></a></p>
                 </div>
                 {% endfor %}
@@ -73,6 +78,16 @@
             </div>
             {% endfor %}
     
+=======
+                    <p><a href="/our_team/contactus?id={{ memb.id }}"><i class="fas fa-envelope fa-3x"></i></a></p>
+                </div>
+
+                {% endfor %}
+               </div>
+        </section>
+
+
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     {% endblock %}
     </body>
  </html>

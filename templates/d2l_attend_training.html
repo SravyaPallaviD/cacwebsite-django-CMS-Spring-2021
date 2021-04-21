@@ -1,5 +1,8 @@
 <html>
+<<<<<<< HEAD
 <!--put extends from html back in -->
+=======
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 {% extends 'header_and_footer.html' %}
 {% load static %}
 {% static "images" as baseUrl %}
@@ -14,6 +17,7 @@
       <div class="container">
           <div>
               <p class="para-text-1">Attend a Darkness to Light Training</p>
+<<<<<<< HEAD
 
               <form action = "" method="POST" class="volunteer-form">
                 {% csrf_token %}
@@ -21,11 +25,25 @@
                       <div class="col-6 left-padding-0">
                           <div class="form-group">
                               <input type="text" class="form-control input-box-shadow name-form-control" id="name" name="name" placeholder="Name" required/>
+=======
+              <form action = "{% url 'd2l_attend_training' %}" method = "post">
+                {% csrf_token %}
+              <form class="volunteer-form">
+
+                  <div class="row">
+                      <div class="col-6 left-padding-0">
+                          <div class="form-group">
+                              <input type="text" class="form-control input-box-shadow name-form-control" id="name" name = "username" aria-describedby="Name" placeholder="Name" />
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                           </div>
                       </div>
                       <div class="col-6 padding-right-0">
                           <div class="form-group">
+<<<<<<< HEAD
                               <input type="text" class="form-control input-box-shadow email-form-control" id="address" name="address" placeholder="Address" required/>
+=======
+                              <input type="text" class="form-control input-box-shadow name-form-control" id="address" name = "address" aria-describedby="Address" placeholder="Address" />
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                           </div>
                       </div>
                   </div>
@@ -33,12 +51,20 @@
                   <div class="row">
                     <div class="col-6 left-padding-0">
                         <div class="form-group">
+<<<<<<< HEAD
                             <input type="text" class="form-control input-box-shadow name-form-control" id="city" name ="city" placeholder="City" required/>
+=======
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="city" name="city" aria-describedby="City" placeholder="City" />
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                         </div>
                     </div>
                     <div class="col-6 padding-right-0">
                         <div class="form-group">
+<<<<<<< HEAD
                             <input type="text" class="form-control input-box-shadow email-form-control" id="state" name="state" placeholder="State" required/>
+=======
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="state" name = "state" aria-describedby="State" placeholder="State" />
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                         </div>
                     </div>
                 </div>
@@ -46,18 +72,35 @@
                 <div class="row">
                     <div class="col-6 left-padding-0">
                         <div class="form-group">
+<<<<<<< HEAD
                             <input type="text" class="form-control input-box-shadow name-form-control" id="zipcode" name="zipcode" placeholder="Zip" required/>
+=======
+                            <input type="text" class="form-control input-box-shadow name-form-control" id="zip" name = "zip" aria-describedby="Zip" placeholder="Zip" />
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                         </div>
                     </div>
                     <div class="col-6 padding-right-0">
                         <div class="form-group">
+<<<<<<< HEAD
                             <input type="tel" class="form-control input-box-shadow email-form-control" id="number" name="number" placeholder="Telephone Number" required/>
+=======
+                           
+                           <input type="text" id="phonenumber" name = "phonenumber" maxlength="10" data-fv-numeric="true" data-fv-numeric-message="Please enter valid phone numbers" data-fv-phone-country11="US" required="required" data-fv-notempty-message="This field cannot be left blank." placeholder="Telephone Number " class="form-control input-box-shadow name-form-control" name="data[User][mobile]" data-fv-field="data[User][mobile]">
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                         </div>
                     </div>
                 </div>
 
                   <div class="form-group">
+<<<<<<< HEAD
                       <input type="email" class="form-control input-box-shadow" id="email" name="email" placeholder="Email Address" required/>
+=======
+                      <input type="text" class="form-control input-box-shadow name-form-control" id="userEmail" name ="userEmail" aria-describedby="Email" placeholder="Email Address" />
+                  </div>
+                  <div class="form-group"> 
+                    <input type="text" name="emailId" class="form input-box-shadow email-form-control"
+                    aria-describedby="Contact" readonly="true" size="75" value="Contact Name:{{member.name}} - {{member.job_title}}">
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                   </div>
 
                   <button type="submit" class="btn btn-primary volunteer-btn">Submit Request</button>
@@ -72,4 +115,8 @@
   
 {% endblock %}
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3

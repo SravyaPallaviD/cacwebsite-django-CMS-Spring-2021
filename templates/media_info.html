@@ -1,11 +1,25 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 <html>
 {% extends 'header_and_footer.html' %}
 {% load static %}
 {% static "images" as baseUrl %}
 <body>
 {% block content %}
+<<<<<<< HEAD
 <h1> This is a Media Information Page </h1>
 
+=======
+<div class = "container">
+	{% for i in video %}
+	<h3 class='text-center mt-2 mb-2'>{{i.title}}</h3>
+	<video class="embed-responsive embed-responsive-16by9" controls="controls" >
+          <source src="{{ i.videofile.url }}" type="video/mp4" />
+        </video>
+        {% endfor %}
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 {% endblock %}
 
 </body>

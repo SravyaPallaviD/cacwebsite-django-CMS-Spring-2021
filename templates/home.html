@@ -2,6 +2,7 @@
 
 {% load static %}
 {% static "images" as baseUrl %}
+<<<<<<< HEAD
 <!-- home page -->
     <!-- bootstrap slideshow -->
     {% block content %}
@@ -33,6 +34,51 @@
             </div>
         </div>
     </div>
+=======
+<body>
+<!-- home page -->
+    
+    {% block content %}
+  
+
+    <!-- Carousel of images on the home screen -->
+
+    <div id= "carouselExampleIndicators" class = "carousel slide" data-ride= "carousel">
+      <!--  Changing the controls to arrows to allow the user to add multiple images in future
+            <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>-->
+        <div class = "carousel-inner">
+            {% for item in carousel %}
+                
+            <div class = "carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
+                <img class = "d-block w-100" src = "{{item.carousel_picture.url}}" alt = "...">
+                <!-- contains the button that links users to different web pages -->
+                <div class="carousel-caption">
+                    <a href="{{item.btn_link}}" target="_blank"><button type="button" class="btn btn-default">{{item.btn_text}}</button></a>
+                </div>
+            </div>
+               
+                
+               
+            {% endfor %}
+           <a class ="carousel-control-prev" href = "#carouselExampleIndicators" role = "button" data-slide = "prev">
+                <span class = "carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class = "sr-only">Previous</span>
+            </a>
+            <a class = "carousel-control-next" href = "#carouselExampleIndicators" role = "button" data-slide = "next">
+                <span class = "carousel-control-next-icon" aria-hidden = "true"></span>
+                <span class = "sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 
     
    <!-- running statistics of the CAC (will need to be added to cms) -->
@@ -53,10 +99,14 @@
                     <div class="counter" data-target="{{ d2l }}">0</div>
                     <p class="stat-name">Darkness to Light Trainees</p>
                 </div> 
+<<<<<<< HEAD
                <!-- <div class = "statistics-item">
                     <p class="stat-name">Child Abuse Cases Investigated</p>
                     <p class="stat-name">{{stat.d2l}}</p>
             </div>-->
+=======
+              
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     </div>
 
         <!-- youtube video for cac -->
@@ -77,7 +127,11 @@
                             <div class="input-group">
                                 <input type="email" class="form-control" placeholder="Enter your email">
                                 <span class="input-group-btn">
+<<<<<<< HEAD
                                     <button class="btn" type="submit">Join</button>
+=======
+                                    <a href = '/press_releases/news_letters#newsletter' class = "btn btn-success">Join</a>
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                                 </span>
                             </div>
                         </form>
@@ -86,8 +140,14 @@
             </div>
         </div>
     </section>
+<<<<<<< HEAD
 </body>
 
 {% endblock %}
+=======
+
+{% endblock %}
+</body>
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 
 </html>

@@ -8,7 +8,11 @@
 <!-- bootstrap design. Each item contains press release title, date, small paragraph and a link to the document. These docs will need to be changed to pdfs -->
 <h1 class="media-headers">Press Releases</h1>
 <div class="list-group">
+<<<<<<< HEAD
 	{% for release in objs10 %}
+=======
+	{% for release in pressrelease %}
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
   <a href="{{ release.document.url }}" download = "{{ release.document.url }}"class="list-group-item list-group-item-action flex-column align-items-start">
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{ release.title }}</h5>

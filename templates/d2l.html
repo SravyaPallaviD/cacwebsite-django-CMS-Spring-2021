@@ -11,15 +11,27 @@
 
 <div class="d2l-text">
   <h1>Additional Information</h1>
+<<<<<<< HEAD
   <p>Darkness to Light is a nationwide initiative designed to train adults how to protect children by teaching them the 5 Steps to Protecting Children from Child Sexual Abuse.</p>
   <p>In 2012, the Child Advocacy Center set a goal to train 11,575 adults, which represents 5% of the adult population of Rutherford and Cannon Counties. The Child Advocacy Center exceeded this goal in 2020 and set a new goal to train 10% of the adult population of Rutherford and Cannon Counties.</p>
+=======
+  <p>{{description|linebreaks}}</p>
+
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 </div>
 
 
 <!-- shows recent pictures of d2l trainings -->
+<<<<<<< HEAD
 <img class="d2l-pictures" src="{% static 'images/D2L-PICTURE.jpg' %}">
 <img class="d2l-pictures" src="{% static 'images/Stepping Stone Academy - D2L Class.jpg' %}">
 <img class="d2l-pictures" src="{% static 'images/The Ascent - D2l Class.jpg' %}">
+=======
+
+{% for imgs in imgd2l %}
+<img class = "d2l-pictures" src= {{imgs.image.url}}>
+{% endfor %}
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 
 <!-- both buttons link to two form pages -->
 <h1 class="d2l-buttons-header">Want to help make a difference?</h1>

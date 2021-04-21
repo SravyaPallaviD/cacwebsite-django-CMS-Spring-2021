@@ -356,7 +356,11 @@ footer p {
 /* background image for cac staff */
 .pImg{
     position: relative;
+<<<<<<< HEAD
     background-image: url("Miscimages/downtown-murfreesboro.jpg");
+=======
+    background-image: url("Miscimages/bg.jpg");
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     min-height: 400px;
     opacity: 0.80;
     background-position: center;
@@ -434,7 +438,11 @@ footer p {
 /*Rutherford and Cannon Services*/
 .RCImg{
     position: relative;
+<<<<<<< HEAD
     background-image: url("Miscimages/rutherford.jpg");
+=======
+    background-image: url("Miscimages/pinwheels in cannon.jpg");
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     min-height: 500px;
     background-position: bottom;
     background-size: cover;
@@ -803,7 +811,11 @@ footer p {
 }
 
 .post-body {
+<<<<<<< HEAD
     background: #767676;
+=======
+    background: #8FBCDB;
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     padding: 56px;
     width: 90%;
     margin: auto;
@@ -814,8 +826,13 @@ footer p {
     border: 0;
     outline: 0;
     vertical-align: baseline;
+<<<<<<< HEAD
     background: white;
     color: #767676;
+=======
+    background: #8FBCDB;
+    color: #ffffff;
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     width: 230px;
     margin: auto;
     font-size: 70px;
@@ -886,8 +903,13 @@ footer p {
     width: 140px;
     height: 44px;
     border: none;
+<<<<<<< HEAD
     background: #1889DB;
     color: white;
+=======
+    background: #ffffff;
+    color: blue;
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 }
 
 .right-join-btn>button:hover {

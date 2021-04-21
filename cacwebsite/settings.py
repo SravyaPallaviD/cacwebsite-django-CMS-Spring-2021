@@ -38,11 +38,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+<<<<<<< HEAD
 
     
 
 ]
 
+=======
+    
+    
+]
+
+
+
+
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -79,6 +89,7 @@ WSGI_APPLICATION = 'cacwebsite.wsgi.application'
 
 DATABASES = {
     'default': {
+<<<<<<< HEAD
         #'ENGINE': 'django.db.backends.postgresql',
         #'NAME': 'cac',
         #'USER': 'postgres',
@@ -86,6 +97,13 @@ DATABASES = {
         #'HOST': 'localhost'
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+=======
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cac',
+        'USER': 'postgres',
+        'PASSWORD': 'admin',
+        'HOST': 'localhost'
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     }
 }
 
@@ -135,6 +153,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+<<<<<<< HEAD
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 
+=======
+# For sending an email
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+#EMAIL_USE_SSL = False
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3

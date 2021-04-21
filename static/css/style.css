@@ -356,7 +356,11 @@ footer p {
 /* background image for cac staff */
 .pImg{
     position: relative;
+<<<<<<< HEAD
     background-image: url("Miscimages/downtown-murfreesboro.jpg");
+=======
+    background-image: url("Miscimages/bg.jpg");
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     min-height: 400px;
     opacity: 0.80;
     background-position: center;
@@ -381,6 +385,7 @@ footer p {
     padding: 20px;
 }
 
+<<<<<<< HEAD
 /* background image for gratitudes page */
 .gImg{
     position: relative;
@@ -409,6 +414,8 @@ footer p {
     padding: 20px;
 }
 
+=======
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 /* background image for board and committee */
 .pImg1{
     position: relative;
@@ -462,7 +469,11 @@ footer p {
 /*Rutherford and Cannon Services*/
 .RCImg{
     position: relative;
+<<<<<<< HEAD
     background-image: url("Miscimages/rutherford.jpg");
+=======
+    background-image: url("Miscimages/pinwheels in cannon.jpg");
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     min-height: 500px;
     background-position: bottom;
     background-size: cover;
@@ -831,12 +842,17 @@ footer p {
 }
 
 .post-body {
+<<<<<<< HEAD
     background: #767676;
+=======
+    background: #8FBCDB;
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     padding: 56px;
     width: 90%;
     margin: auto;
 }
 
+<<<<<<< HEAD
 .gratitude-body {
     background: #FFFFFF;
     padding: 56px;
@@ -845,13 +861,20 @@ footer p {
     color: black;
 }
 
+=======
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 .heading-1 {
     padding: 0;
     border: 0;
     outline: 0;
     vertical-align: baseline;
+<<<<<<< HEAD
     background: white;
     color: #767676;
+=======
+    background: #8FBCDB;
+    color: #ffffff;
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     width: 230px;
     margin: auto;
     font-size: 70px;
@@ -890,11 +913,14 @@ footer p {
     position: relative;
 }
 
+<<<<<<< HEAD
 .right-content-gratitude, .left-content-gratitude {
     color: black;
     position: relative;
 }
 
+=======
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 .right-content {
     text-align: right;
 }
@@ -904,6 +930,7 @@ footer p {
     ;
 }
 
+<<<<<<< HEAD
 .right-content-gratitude {
     text-align: right;
 }
@@ -913,6 +940,8 @@ footer p {
     ;
 }
 
+=======
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 .left-content>h1, .right-content>h1 {
     font-size: 52px;
 }
@@ -936,8 +965,13 @@ footer p {
     width: 140px;
     height: 44px;
     border: none;
+<<<<<<< HEAD
     background: #1889DB;
     color: white;
+=======
+    background: #ffffff;
+    color: blue;
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 }
 
 .right-join-btn>button:hover {
@@ -1216,6 +1250,7 @@ footer p {
 
 .newsletter-signup {
     margin: 50px;
+<<<<<<< HEAD
 }
 
 /* Resources page  */
@@ -1318,3 +1353,6 @@ footer p {
   letter-spacing:  0.02em;
 }
 
+=======
+}
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3

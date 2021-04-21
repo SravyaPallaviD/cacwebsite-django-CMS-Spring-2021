@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 {% extends 'header_and_footer.html' %}
 
@@ -6,6 +7,16 @@
 
 
   <body>
+=======
+{% extends 'header_and_footer.html' %}
+{% load static %}
+{% static "images" as baseUrl %}
+<html>
+<!--replacing the header and footer using header and footer html page from cms-->
+<body>
+
+  
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
     {% block content %}
 
       <!-- cac staff backgroun image -->

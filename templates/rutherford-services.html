@@ -1,6 +1,7 @@
 {% extends 'header_and_footer.html' %}
 {% load static %}
 {% static "images" as baseUrl %}
+<<<<<<< HEAD
 <html>
 <body>
   {% block content %}
@@ -11,6 +12,54 @@
           <h1 id="services-header"> Services </h1>
           <!-- format is picture to the right, text to the left and then it switches sides for each section-->
           <div class="service-block">
+=======
+
+<html>
+<body>
+  {% block content %}
+  <div id="header"></div>
+    <div class = "RCImg">
+      <h1>Rutherford County</h1>
+      </div>
+          <h1 id="services-header"> Services </h1>
+
+            
+        {% for blk in rutherfordservices %}
+            {% if forloop.counter|divisibleby:"2" %}
+          <div class = "service-block">
+            <div class = "block-item">
+              <img src = "{{blk.image.url}}" width= "440ppx" height="330ppx">
+              </div>
+              <div class = "block-item">
+                <h1>{{blk.title}}</h1>
+                <p>
+                  {{blk.description|linebreaks}}
+                </p>
+             </div>
+          </div>
+
+                {% else %}
+
+                  <div class="service-block">
+                    <div class="block-item">
+                      <h1>{{blk.title}}</h1>
+                      <p>
+                       {{blk.description|linebreaks}}
+                      </p>
+                    </div>
+                    <div class="block-item">
+                      <img src = "{{blk.image.url}}" width = "440ppx" height = "330ppx">
+                    </div>
+                  </div>
+
+                    {% endif %}
+        {% endfor %}
+<!--
+
+          <h1 id="services-header"> Services </h1> -->
+          <!-- format is picture to the right, text to the left and then it switches sides for each section-->
+       <!--   <div class="service-block">
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
             <div class="block-item">
                 <h1>Forensic Interview</h1>
                 <p>Forensic interviews are provided in a safe, child friendly location where children suspected of being victims of abuse are interviewed in connection with the crime.
@@ -20,12 +69,21 @@
                 
                 <p>Sometimes a child may require an extended forensic interview. The extended forensic interview is a multi-session structured interview. Some children may need more than one session and up to four sessions to talk about allegations of abuse. An extended forensic interview is utilized for children with special developmental considerations or children who are particularly anxious or frightened.
                     The Child Advocacy Center has two forensic interviewers and two back-up forensic interviewers that interview Rutherford and Cannon County child victims. All of the forensic interviewers have received extensive specialized training to respond to child abuse, child sexual abuse, drug endangered children, and child witnesses to violence crime cases. The forensic interviewers participate in professional trainings and quarterly peer review to continually improve their skills. The team triages emergency child abuse cases, prioritizes cases, and responds to child victims who are in eminent danger.</p>
+<<<<<<< HEAD
             </div>
 
             <!-- separate box that contains bullet points, used to make design more cohesive-->
             <div class="vertical-service-block">
                 <!-- image used to the right of the text, all images are from copyright free websites -->
                 <div class="block-item forensic-services-image-item">
+=======
+            </div> -->
+
+            <!-- separate box that contains bullet points, used to make design more cohesive-->
+     <!--       <div class="vertical-service-block"> -->
+                <!-- image used to the right of the text, all images are from copyright free websites -->
+      <!--          <div class="block-item forensic-services-image-item">
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
                     <img src="{% static 'images/forensic-services-image.jpg' %}" width="440px">
                 </div>
                 <div class="block-item forensic-services-list-item">
@@ -46,6 +104,11 @@
 
 
           </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
           <div class="service-block">
               <div class="block-item">
                   <img src="{% static 'images/family-services-image.jpg' %}" width="440px">
@@ -72,7 +135,12 @@
                   <h1>Bilingual Services</h1>
                   <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequuntur, vel mollitia. Neque quod alias expedita nam deleniti earum dolorum beatae voluptatem, vitae corporis laudantium natus, repellat ex dicta eum ullam. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio, recusandae? Quia, praesentium molestias repellat, optio rerum magni iure minus debitis aperiam accusamus ab quam iste, corporis ullam harum unde quis!</p>
               </div>
+<<<<<<< HEAD
           </div>
+=======
+          </div> -->
+
+>>>>>>> 18140e79ee359a5792e322ec4efb24b84de933b3
 
 {% endblock %}
 </body>
